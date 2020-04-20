@@ -1,0 +1,136 @@
+@import url(https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.css);
+@import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600);
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #ffffff;
+}
+
+.wrap {
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 16px;
+  font-weight: normal;
+  line-height: 1.4;
+  padding: 2rem;
+}
+.wrap > * {
+  display: block;
+  margin: 0 auto;
+  max-width: 100%;
+}
+
+ /*.read-more {
+  position: relative;
+  color: #34495e;
+  text-decoration: none;
+  cursor: text;
+
+}
+.read-more .trigger {
+  display: block;
+  position: absolute;
+  bottom: 0;
+  cursor: pointer;
+  color: #2980b9;
+  font-weight: bold;
+}*/
+
+
+
+
+
+
+.read-more .trigger{
+  position: relative;
+  width: 180px;
+  height: 60px;
+  line-height: 50px;
+  border-radius: 30px;
+  border: 3px solid #2980b9;
+  background-color: transparent;
+  text-align: center;
+  color: #2980b9;
+  font-size: 1.4em;
+
+  transition: all .3s ease-in;
+  -webkit-transition: all .3s ease-in;
+  cursor:pointer;
+}
+
+.read-more .trigger:hover{
+  background-color: #34495e;
+  color: #fff;
+}
+
+
+
+
+
+
+
+
+
+.read-more .content {
+  position: relative;
+  overflow: hidden;
+  max-height: 650.0px;
+  transition: max-height 500ms ease;
+}
+.read-more .content::before {
+  content: '';
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, white 50%, white 100%);
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 54.8px;
+  transition: opactiy 500ms ease, visibility 500ms ease;
+}
+.read-more.expanded .content {
+  max-height: 800px;
+}
+.read-more.expanded .content::before,
+.read-more.expanded .trigger {
+  opacity: 0;
+  visibility: hidden;
+}
+
+
+
+
+#cover-spin {
+    position:fixed;
+    width:100%;
+    left:0;right:0;top:0;bottom:0;
+    background-color: rgba(255,255,255,0.7);
+    z-index:9999;
+    display:none;
+}
+
+@-webkit-keyframes spin {
+  from {-webkit-transform:rotate(0deg);}
+  to {-webkit-transform:rotate(360deg);}
+}
+
+@keyframes spin {
+  from {transform:rotate(0deg);}
+  to {transform:rotate(360deg);}
+}
+
+#cover-spin::after {
+    content:'';
+    display:block;
+    position:absolute;
+    left:48%;top:40%;
+    width:40px;height:40px;
+    border-style:solid;
+    border-color:black;
+    border-top-color:transparent;
+    border-width: 4px;
+    border-radius:50%;
+    -webkit-animation: spin .8s linear infinite;
+    animation: spin .8s linear infinite;
+}
+
+#succeedMessage {display:none;color:#36f;font:bold 18px;}
